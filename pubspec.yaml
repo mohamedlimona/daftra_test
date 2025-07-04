@@ -1,0 +1,22 @@
+name: mini_pos_checkout
+description: A mini POS checkout core.
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  bloc: ^9.0.0
+  equatable: ^2.0.7
+  hydrated_bloc: ^10.0.0
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  bloc_test: ^10.0.0
+
+flutter:
+  assets:
+    - assets/catalog.json
+
