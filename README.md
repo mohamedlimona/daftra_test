@@ -1,7 +1,3 @@
-# Mini-POS Checkout Core
-
-
----
 
 ## Project Structure
 
