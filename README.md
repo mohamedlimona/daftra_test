@@ -1,36 +1,121 @@
 # Mini-POS Checkout Core
 
-This project implements a "Mini-POS Checkout Core" in Dart using the BLoC state management library. It includes a catalog, a shopping cart, and a receipt builder, along with comprehensive unit test coverage.
+This project implements a **Mini-POS Checkout Core** in **pure Dart** using the **BLoC** state management library. It includes a **product catalog**, a **shopping cart**, and a **receipt generator**, along with **full unit test coverage**. The core is **headless** (no UI) and is designed for integration into Flutter or backend applications.
+
+---
 
 ## Project Structure
 
-- `lib/src/catalog/`: Contains the `Item` model, `CatalogBloc` for managing the product catalog, and related events.
-- `lib/src/cart/`: Contains `CartLine`, `CartTotals`, `CartState` models, `CartBloc` for managing the shopping cart logic, and `Receipt` builder.
-- `assets/`: Contains `catalog.json` which serves as the product database.
-- `test/`: Contains unit tests for `CatalogBloc` and `CartBloc`.
+```
+mini_pos_checkout/
+├── lib/
+│   └── src/
+│       ├── catalog/
+│       │   ├── catalog_bloc.dart         # CatalogBloc for managing catalog
+│       │   ├── catalog_event.dart        # Events for CatalogBloc
+│       │   └── item.dart                 # Product item model
+│       └── cart/
+│           ├── cart_bloc.dart            # CartBloc for cart business logic
+│           ├── cart_event.dart           # Events for CartBloc
+│           ├── cart_state.dart           # CartState with cart lines & totals
+│           ├── models.dart               # CartLine, CartTotals models
+│           └── receipt.dart              # Receipt builder
+│      
+├── assets/
+│   └── catalog.json                      # Static catalog for item definitions
+└── test/
+    ├── catalog_bloc_test.dart            # Unit tests for catalog logic
+    └── cart_bloc_test.dart               # Unit tests for cart logic (add, undo, redo, etc.)
+```
 
-## Setup and Installation
+---
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository_url>
-    cd mini_pos_checkout
-    ```
+## 🚀 Setup and Installation
 
-2.  **Install dependencies:**
-    Make sure you have Flutter SDK installed and configured. Then run:
-    ```bash
-    flutter pub get
-    ```
+**Clone the repository:**
 
-## Running Tests
+[or use zip file]
 
-To run all unit tests, execute the following command in the project root directory:
+```bash
+git clone https://github.com/mohamedlimona/daftra_test.git
+cd mini_pos_checkout
+```
+
+
+**Install dependencies:**
+
+Ensure the following versions:
+
+- ✅ Flutter SDK: `3.29.3`
+- ✅ Dart SDK: `3.2.3`
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+**Estimated Time Spent:**
+
+- ⏱️ **1 Day** of focused development and testing.
+
+---
+
+## 🧪 Running Unit Tests
+
+To verify core functionality, run the unit tests:
 
 ```bash
 flutter test
 ```
 
-All tests should pass, indicating the core logic is functioning as expected.
+You should see all tests pass, covering:
+
+- ✅ CartBloc operations: add, remove, quantity, discounts
+- ✅ Undo/Redo logic with history stack
+- ✅ Receipt generation
+- ✅ CatalogBloc for loading catalog from JSON
+
+---
+
+## 📦 Features
+
+-  Add, update, remove items from cart
+-  Quantity and discount updates
+-  Undo and redo operations
+-  Receipt generation with tax and discount breakdown
+-  Optional manual storage (save/load state)
+-  Modular and testable architecture
+-  Pure Dart logic – usable across Flutter/mobile/server
 
 
+
+## 📦 Missed Items
+
+- Hydration
+---
+ 
+
+## 🗃️ Asset: `catalog.json`
+
+Your product catalog is defined in:
+
+```
+assets/catalog.json
+```
+ 
+
+## 🧠 Undo / Redo Support
+
+The `CartBloc` supports:
+
+- ⬅️ `Undo` — revert to previous cart state
+- ➡️ `Redo` — re-apply a reverted change
+
+  
+## 👨‍💻 Author
+
+**Mohamed Tawfik**  
+GitHub: [@mohamedlimona](https://github.com/mohamedlimona)
+
+ 
