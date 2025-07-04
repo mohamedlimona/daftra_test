@@ -1,6 +1,5 @@
 # Mini-POS Checkout Core
 
-This project implements a **Mini-POS Checkout Core** in **pure Dart** using the **BLoC** state management library. It includes a **product catalog**, a **shopping cart**, and a **receipt generator**, along with **full unit test coverage**. The core is **headless** (no UI) and is designed for integration into Flutter or backend applications.
 
 ---
 
